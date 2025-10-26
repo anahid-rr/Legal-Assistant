@@ -9,8 +9,10 @@ const RecommendationSystem = require('./recommendation-system');
 require('dotenv').config();
 // dotenv.config();
 const app = express();
-const port = process.env.PORT || 3000;
-
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`✅ Server running on port ${PORT}`);
+});
 // Initialize OpenAI
 const openai = new OpenAI({
     apiKey: process.env.OPENAI_API_KEY,
